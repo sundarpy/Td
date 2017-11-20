@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+    <head>
+        <title> RssFeed Search</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        {% block head_injections %} 
+
+        {% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container-fluid">
+                {% block layout %}
+
+                {% endblock %}
+            </div>
+        </div>
+        {% block footer_injections %}
+            <script src="{% static 'js/bootstrap.js' %}"></script>
+        {% endblock %}    
+    </body>
+</html>

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block head_injections %}
+        {{ block.super }}  
+<style>
+.w65{
+width: 65px;
+}
+.top10{
+margin-top:10px;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <h2 class="product-title orange">{{object.title}}</h2>
+        <div class="product-information">
+            <h4>
+                Main Link: <button class="btn btn-sm btn-primary"><a target="_blank" href="{{ object.main_link }}" style="color: #fff;text-decoration: none;">{{object.main_link}}
+                </a></button>
+            </h4>
+            <h4>
+                Sub Link: <a target="_blank" href="{{ object.sub_link }}"><button class="btn btn-primary btn-sm">{{object.sub_link}}</button>
+                </a>
+            </h4>
+            {% if object.category %}
+                <h5>
+                    category: <b>{{object.category}}</b>
+                </h5>
+            {% else %}
+                <h5>
+                    category: <b>None</b>
+                </h5>
+            {% endif %}
+
+            {% if object.published %}
+            <h5>
+                Published: <b>{{object.published}}</b>
+            </h5>
+            {% else %}
+                Published: <b>None</b>
+            {% endif %}
+
+            {% if object.updated %}
+            <h5>
+                updated: <b>{{object.updated}}</b>
+            </h5>
+            {% else %}
+                updated: <b>None</b>
+            {% endif %}
+
+
+            {% if object.tag_id %}
+                <h5>
+                    Id: <b>{{object.tag_id}}</b>
+                </h5>
+            {% else %}
+
+                <h5>
+                    id: <b>None</b>
+                </h5>
+            {% endif %}
+
+            {% if object.description %}
+                <h5> Description:</h5> <b>{{ object.description|safe }}</b>
+            {% else %}
+            <h5> Description:</h5> <b>None</b>
+            {% endif %}
+                
+       </div>
+    </div>
+
+    
+</div>
+{% endblock %}
+
+
+
+{% block extrascripts %}
+{% endblock %}
+
+
+
+
+
